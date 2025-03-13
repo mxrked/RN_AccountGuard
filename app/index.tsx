@@ -16,6 +16,7 @@ import Start_Screen_Styles from "../assets/styles/Screens/Start_Screen_Styles";
 
 import SettingsModal from "../assets/components/Global/SettingsModal";
 import TopButtons from "../assets/components/Global/TopButtons";
+import CreatedByText from "../assets/components/Global/CreatedByText";
 
 export default function Index() {
   const router = useRouter();
@@ -93,10 +94,10 @@ export default function Index() {
                   {
                     fontFamily: "QuicksandBold",
                     textAlignVertical: "center",
-                    paddingLeft: 15,
-                    paddingRight: 15,
+                    paddingLeft: 12,
+                    paddingRight: 12,
                     color: "white",
-                    fontSize: 17,
+                    fontSize: 15,
                   },
                 ]}
               >
@@ -122,10 +123,10 @@ export default function Index() {
                   {
                     fontFamily: "QuicksandBold",
                     textAlignVertical: "center",
-                    paddingLeft: 15,
-                    paddingRight: 15,
+                    paddingLeft: 12,
+                    paddingRight: 12,
                     color: "white",
-                    fontSize: 17,
+                    fontSize: 15,
                   },
                 ]}
               >
@@ -151,10 +152,10 @@ export default function Index() {
                   {
                     fontFamily: "QuicksandBold",
                     textAlignVertical: "center",
-                    paddingLeft: 15,
-                    paddingRight: 15,
+                    paddingLeft: 12,
+                    paddingRight: 12,
                     color: "black",
-                    fontSize: 17,
+                    fontSize: 15,
                   },
                 ]}
               >
@@ -164,6 +165,8 @@ export default function Index() {
             </View>
           </TouchableOpacity>
         </View>
+
+        <CreatedByText />
       </View>
     </ImageBackground>
   );
