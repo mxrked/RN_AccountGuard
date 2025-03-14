@@ -17,6 +17,7 @@ import Start_Screen_Styles from "../assets/styles/Screens/Start_Screen_Styles";
 import SettingsModal from "../assets/components/Global/SettingsModal";
 import TopButtons from "../assets/components/Global/TopButtons";
 import CreatedByText from "../assets/components/Global/CreatedByText";
+import LogoWithText from "../assets/components/Global/LogoWithText";
 
 export default function Index() {
   const router = useRouter();
@@ -58,23 +59,7 @@ export default function Index() {
           Start_Screen_Styles.startScreenMV,
         ]}
       >
-        <View style={[Start_Screen_Styles.startScreenLogoView]}>
-          <Image
-            source={require("../assets/imgs/logos/white-logo.png")}
-            style={[Start_Screen_Styles.startScreenLogo]}
-          />
-          <Text
-            style={{
-              textAlign: "center",
-              marginTop: "-50",
-              fontFamily: "QuicksandBold",
-              color: "white",
-              fontSize: 17,
-            }}
-          >
-            PERSONAL ACCOUNT MANAGER
-          </Text>
-        </View>
+        <LogoWithText text="PERSONAL ACCOUNT MANAGER" />
 
         <View style={[Start_Screen_Styles.startScreenButtonsView]}>
           <TouchableOpacity

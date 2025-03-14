@@ -1,9 +1,11 @@
 import { StyleSheet } from "react-native";
 
 const Login_Screen_Styles = StyleSheet.create({
-  darkenOverlay: {
+  logoScreenMainView: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.25)",
+    alignItems: "center",
+    justifyContent: "center",
+    // backgroundColor: "rgba(0, 0, 0, 0.25)",
   },
 });
 

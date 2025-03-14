@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   Modal,
+  TextInput,
   BackHandler,
 } from "react-native";
 import { useRouter, Link } from "expo-router";
@@ -16,6 +17,7 @@ import Login_Screen_Styles from "../../assets/styles/Screens/Login_Screen_Styles
 
 import SettingsModal from "../../assets/components/Global/SettingsModal";
 import TopButtons from "../../assets/components/Global/TopButtons";
+import LogoWithText from "@/assets/components/Global/LogoWithText";
 
 export default function Login() {
   const router = useRouter();
@@ -38,18 +40,19 @@ export default function Login() {
 
   return (
     <ImageBackground
-      source={require("../../assets/imgs/bgs/light-orange-minimal.webp")}
+      source={require("../../assets/imgs/bgs/dark-orange-minimal.webp")}
       style={[Global_Styles.imageBG]}
     >
-      <View style={[Login_Screen_Styles.darkenOverlay]}>
-        {/** TOP BUTTONS */}
-        <TopButtons openSettings={openSettings} />
-
+      {/** TOP BUTTONS */}
+      <TopButtons openSettings={openSettings} />
+      <View style={[Login_Screen_Styles.logoScreenMainView]}>
         {/** SETTINGS MODAL */}
         <SettingsModal
           settingsOpened={settingsOpened}
           closeSettings={closeSettings}
         />
+
+        <LogoWithText text="LOGIN TO YOUR AG PROFILE" />
       </View>
     </ImageBackground>
   );
