@@ -18,6 +18,7 @@ import SettingsModal from "../assets/components/Global/SettingsModal";
 import TopButtons from "../assets/components/Global/TopButtons";
 import CreatedByText from "../assets/components/Global/CreatedByText";
 import LogoWithText from "../assets/components/Global/LogoWithText";
+import CustomButton from "../assets/components/Global/CustomButton";
 
 export default function Index() {
   const router = useRouter();
@@ -36,6 +37,13 @@ export default function Index() {
   };
   const closeSettings = () => {
     setSettingsOpened(false);
+  };
+
+  const goToLogin = () => {
+    router.push("/login");
+  };
+  const goToRegister = () => {
+    router.push("/register");
   };
 
   return (
@@ -62,64 +70,13 @@ export default function Index() {
         <LogoWithText text="PERSONAL ACCOUNT MANAGER" />
 
         <View style={[Start_Screen_Styles.startScreenButtonsView]}>
-          <TouchableOpacity
-            onPress={() => {
-              router.push("/login");
-            }}
-          >
-            <View
-              style={[
-                Global_Styles.globalButton,
-                Start_Screen_Styles.loginButtonView,
-              ]}
-            >
-              <Text
-                // href="/register"
-                style={[
-                  {
-                    fontFamily: "QuicksandBold",
-                    textAlignVertical: "center",
-                    paddingLeft: 12,
-                    paddingRight: 12,
-                    color: "white",
-                    fontSize: 15,
-                  },
-                ]}
-              >
-                LOGIN
-                {/* <Text style={{ textAlign: "center" }}>REGISTER</Text> */}
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              router.push("/register");
-            }}
-          >
-            <View
-              style={[
-                Global_Styles.globalButton,
-                Start_Screen_Styles.registerButtonView,
-              ]}
-            >
-              <Text
-                // href="/register"
-                style={[
-                  {
-                    fontFamily: "QuicksandBold",
-                    textAlignVertical: "center",
-                    paddingLeft: 12,
-                    paddingRight: 12,
-                    color: "white",
-                    fontSize: 15,
-                  },
-                ]}
-              >
-                REGISTER
-                {/* <Text style={{ textAlign: "center" }}>REGISTER</Text> */}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <CustomButton text="LOGIN" onPressFunc={goToLogin} customStyle={{}} />
+          <CustomButton
+            text="REGISTER"
+            onPressFunc={goToRegister}
+            customStyle={{}}
+          />
+
           <TouchableOpacity
             onPress={() => {
               exitApp();
@@ -136,6 +93,7 @@ export default function Index() {
                 style={[
                   {
                     fontFamily: "QuicksandBold",
+                    fontWeight: "bold",
                     textAlignVertical: "center",
                     paddingLeft: 12,
                     paddingRight: 12,

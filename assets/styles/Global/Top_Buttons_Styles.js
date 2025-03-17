@@ -5,7 +5,7 @@ const Top_Buttons_Styles = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     padding: 25,
   },
   helpButton: {

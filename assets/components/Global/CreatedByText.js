@@ -20,6 +20,7 @@ const CreatedByText = () => {
         style={[
           {
             fontFamily: "QuicksandBold",
+            fontWeight: "400",
             textAlignVertical: "center",
             color: "white",
             fontSize: 15,
@@ -34,6 +35,7 @@ const CreatedByText = () => {
             {
               fontFamily: "QuicksandBold",
               textAlignVertical: "center",
+              fontWeight: "400",
               color: "white",
               fontSize: 15,
               marginTop: 5,

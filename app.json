@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/imgs/pre-build-icons/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.pahkah.RN_AccountGuard"
+      "package": "com.pahkah.RN_AccountGuard",
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "bundler": "metro",
