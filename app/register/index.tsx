@@ -33,20 +33,14 @@ export default function Register() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [settingsOpened, setSettingsOpened] = useState(false);
-  const [customFonts] = useFonts({
-    QuicksandBold: require("../../assets/fonts/quicksand/Quicksand-Bold.ttf"),
-  });
-  // const [loginUserEmail, setLoginUserEmail] = useState("");
-  // const [loginPassword, setLoginPassword] = useState("");
-
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerUsername, setRegisterUsername] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
 
-  const exitApp = () => {
-    BackHandler.exitApp();
-  };
+  const [customFonts] = useFonts({
+    QuicksandBold: require("../../assets/fonts/quicksand/Quicksand-Bold.ttf"),
+  });
 
   const openSettings = () => {
     setSettingsOpened(true);
@@ -54,7 +48,6 @@ export default function Register() {
   const closeSettings = () => {
     setSettingsOpened(false);
   };
-
   const clearRegister = () => {
     setRegisterEmail("");
     setRegisterUsername("");
@@ -67,10 +60,6 @@ export default function Register() {
     await AsyncStorage.removeItem("username");
     setIsLoggedIn(false); // Update state to reflect logout
   };
-
-  // const registerUser = () => {
-  //   console.log(true);
-  // };
 
   const registerUser = async () => {
     if (registerPassword !== registerConfirmPassword) {

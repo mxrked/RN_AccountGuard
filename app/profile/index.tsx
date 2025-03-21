@@ -26,6 +26,7 @@ export default function Profile() {
   const [settingsOpened, setSettingsOpened] = useState(false);
   const [username, setUsername] = useState("Guest");
 
+  // Getting the username
   useEffect(() => {
     const fetchUsername = async () => {
       const storedUsername = await AsyncStorage.getItem("username");

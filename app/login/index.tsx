@@ -29,33 +29,31 @@ import LogoWithText from "@/assets/components/Global/LogoWithText";
 import InputType from "../../assets/components/Forms/InputType";
 import CustomButton from "@/assets/components/Global/CustomButton";
 
-// Simple email validation function
-const validateEmail = (email) => {
-  const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  return re.test(email);
-};
-
 export default function Login() {
   const router = useRouter();
 
   const [settingsOpened, setSettingsOpened] = useState(false);
-  const [customFonts] = useFonts({
-    QuicksandBold: require("../../assets/fonts/quicksand/Quicksand-Bold.ttf"),
-  });
   const [loginUserEmail, setLoginUserEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
+  const [customFonts] = useFonts({
+    QuicksandBold: require("../../assets/fonts/quicksand/Quicksand-Bold.ttf"),
+  });
+
+  // Simple email validation function
+  const validateEmail = (email) => {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(email);
+  };
   const exitApp = () => {
     BackHandler.exitApp(); // Exit the app when triggered
   };
-
   const openSettings = () => {
     setSettingsOpened(true);
   };
   const closeSettings = () => {
     setSettingsOpened(false);
   };
-
   const clearLogin = () => {
     setLoginUserEmail("");
     setLoginPassword("");

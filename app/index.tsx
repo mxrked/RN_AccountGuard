@@ -24,6 +24,7 @@ export default function Index() {
 
   const [settingsOpened, setSettingsOpened] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const [customFonts] = useFonts({
     QuicksandBold: require("../assets/fonts/quicksand/Quicksand-Bold.ttf"),
   });
@@ -31,7 +32,6 @@ export default function Index() {
   const exitApp = () => {
     BackHandler.exitApp();
   };
-
   const openSettings = () => {
     setSettingsOpened(true);
   };
@@ -58,7 +58,6 @@ export default function Index() {
     await AsyncStorage.removeItem("username");
     setIsLoggedIn(false); // Update state to reflect logout
   };
-
   const goToLogin = () => {
     router.push("/login");
   };
@@ -68,25 +67,6 @@ export default function Index() {
   const goToProfile = () => {
     router.push("/profile");
   };
-
-  // Add back handler for swipe-back gesture and hardware back button press
-  useEffect(() => {
-    const backAction = () => {
-      // Close the app if on Start Screen (prevent swipe-back)
-      exitApp();
-      return true; // Prevent default behavior of the back button
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    // Clean up the event listener on unmount
-    return () => {
-      backHandler.remove();
-    };
-  }, []);
 
   return (
     <ImageBackground

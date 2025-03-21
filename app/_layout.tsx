@@ -1,13 +1,25 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View, BackHandler } from "react-native";
+import { StyleSheet, View, BackHandler, Alert } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useEffect } from "react"; // Import useEffect to add/remove the back button handler
 
 export default function RootLayout() {
   useEffect(() => {
     const backAction = () => {
-      return true; // Disable hardware back button (does nothing)
+      // Display an alert asking if the user wants to exit
+      Alert.alert("Exit App", "Do you want to exit?", [
+        {
+          text: "Cancel",
+          onPress: () => null,
+          style: "cancel", // Cancel the action
+        },
+        {
+          text: "Yes",
+          onPress: () => BackHandler.exitApp(), // Exit the app if "Yes" is pressed
+        },
+      ]);
+      return true; // Prevent the default back button action
     };
 
     const backHandler = BackHandler.addEventListener(
@@ -15,7 +27,7 @@ export default function RootLayout() {
       backAction
     );
 
-    // Clean up the event listener when the component unmounts
+    // Cleanup the event listener when the component unmounts
     return () => {
       backHandler.remove();
     };
