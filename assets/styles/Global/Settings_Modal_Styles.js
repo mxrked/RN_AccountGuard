@@ -28,6 +28,7 @@ const Settings_Modal_Styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    marginBottom: 30,
   },
   reloadAppButton: {
     backgroundColor: "rgba(255, 255, 255, .20)",
