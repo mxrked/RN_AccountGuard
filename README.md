@@ -1,6 +1,6 @@
-# Account Manager React Native App
+![Image Alt Text](/assets/imgs/logos/logo.webp)
 
-Welcome to the **Account Manager App** built with **React Native** and **Expo**. This app allows users to manage their accounts efficiently by providing functionalities to add, remove, and view accounts. Users can also register their profile, reset their password, and access their personalized dashboard.
+Welcome to **AccountGuard** built with **React Native** and **Expo**. This app allows users to manage their accounts efficiently by providing functionalities to add, remove, and view accounts. Users can also register their profile, reset their password, and access their personalized dashboard.
 
 ## Screens
 
