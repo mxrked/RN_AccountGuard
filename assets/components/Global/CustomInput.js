@@ -1,5 +1,6 @@
 import React from "react";
 import { useFonts } from "expo-font";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import { View, TextInput } from "react-native";
 
@@ -16,7 +17,7 @@ const CustomInput = ({ type, placeholder, id, value, onChangeText }) => {
     return (
       <View style={[Custom_Input_Styles.customInput_TypeView]}>
         <TextInput
-          style={{ fontFamily: "PoppinsMedium" }}
+          style={{ fontFamily: "PoppinsMedium", fontSize: RFValue(12) }}
           id={id}
           value={value}
           placeholder={placeholder}
@@ -29,7 +30,7 @@ const CustomInput = ({ type, placeholder, id, value, onChangeText }) => {
     return (
       <View style={[Custom_Input_Styles.customInput_TypeView]}>
         <TextInput
-          style={{ fontFamily: "PoppinsMedium" }}
+          style={{ fontFamily: "PoppinsMedium", fontSize: RFValue(12) }}
           id={id}
           value={value}
           onChangeText={onChangeText}
